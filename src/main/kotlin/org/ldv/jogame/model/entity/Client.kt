@@ -12,8 +12,8 @@ class Client(
     prenom: String,
     email: String,
     motDePasse: String,
-    role: String = "client"
-) : Utilisateur(null, nom, prenom, email, motDePasse, role) {
+
+) : Utilisateur(id, nom, prenom, email, motDePasse) {
 
     @Transient
     fun ajouterJeuPanier() {}

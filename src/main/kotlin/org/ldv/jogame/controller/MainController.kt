@@ -4,16 +4,16 @@ import org.ldv.jogame.model.dao.JeuxDAO
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.security.core.Authentication
+
+
 
 @Controller
 class MainController (val jeuxDAO: JeuxDAO) {
 
 
-    /**
-     * Méthode permettant d'afficher la page d'accueil de l'application.
-     * @return le chemin vers le template a partir du dossier ressources/templates (on ne marque pas le .html)
-     */
     @GetMapping("/Jogame")
     fun home(): String {
         return "index"
@@ -48,6 +48,13 @@ class MainController (val jeuxDAO: JeuxDAO) {
     fun tendance(): String {
         return "tendance"  // templates/tendance.html
     }
+    @GetMapping("/Jogame/login")
+    fun login(@RequestParam error: Boolean?, model: Model): String {
+        // Ajoute un attribut "error" au modèle si la requête contient une erreur
+        model.addAttribute("error", error == true)
+        return "pagesVisiteur/login"
+    }
+
 
     @GetMapping("/Jogame/api/tendance")
     @ResponseBody
@@ -65,4 +72,23 @@ class MainController (val jeuxDAO: JeuxDAO) {
             )
         }
     }
+    @Controller
+    class ProfilController {
+
+        @GetMapping("/Jogame/profil")
+        fun profile(authentication: Authentication): String {
+
+            // Récupération des rôles de l'utilisateur
+            val roles = authentication.authorities.map { it.authority }
+
+            // Redirection si admin
+            if ("ROLE_ADMIN" in roles) {
+                return "redirect:/Jogame/admin/dashboard"
+            }
+
+            // Sinon affichage de la page profil
+            return "pagesClient/profile"
+        }
+    }
+
 }

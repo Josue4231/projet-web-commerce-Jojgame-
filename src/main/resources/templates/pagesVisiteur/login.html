@@ -1,0 +1,45 @@
+<div class="col-md-5 text-end">
+    <div th:sec:authorize="isAuthenticated()" class="nav-item">
+        <form action="/e-kommerce/logout" method="post">
+            <button class="btn btn-outline-primary me-2">Logout</button>
+        </form>
+    </div>
+
+    <div th:sec:authorize="isAnonymous()">
+        <!-- Bouton pour ouvrir le modal de login -->
+        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login
+        </button>
+        <button th:sec:authorize="isAnonymous()" type="button" class="btn btn-primary">Inscription</button>
+    </div>
+</div>
+
+<!-- Modal de connexion -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Connection</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/Jogame/login" method="post">
+                    <!-- Affiche le message d'erreur si l'attribut "error" est présent -->
+                    <p th:if="${error}" class="alert alert-danger">Identifiants incorrects. Veuillez réessayer.</p>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Email</label>
+                        <input class="form-control" id="username" name="username" type="text" placeholder="Entrer votre e-mail" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input class="form-control" id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

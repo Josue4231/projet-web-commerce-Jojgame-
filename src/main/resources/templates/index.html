@@ -1,258 +1,318 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org" th:replace="base :: html">
+
 <link rel="stylesheet" th:href="@{/css/style.css}">
-
-
-
-
 
 <div th:fragment="content">
 
-
-
     <section class="hero">
         <a href="#"></a>
-
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>Bienvenue sur JoGame </h1>
             <p>Découvrez les dernières tendances, précommandez vos jeux préférés et restez informé sur les prochaines sorties.
                 Notre équipe est disponible 24/7 pour vous offrir le meilleur support.</p>
         </div>
-        </a>
     </section>
 
     <!--Tendance-->
-    <div id ="Tendance">
-        <a href="/Jogame/tendance">
-            <h1>Tendance ></h1>
-        </a>
+    <div id="Tendance">
+        <h1 class="tendance-title">Jeux tendance ></h1>
+        <div class="games-grid">
 
-        <div class="">
-            <img th:src="@{img/Ghostyotei.jpg}">
-            <video muted loop preload="none">
-                <source src="videos/gta6-trailer.mp4" type="video/mp4">
-            </video>
-            <span class="span">Ghost of Yotei</span>
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/Ghostyotei.jpg}" alt="Ghost of Yotei" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/gta6-trailer.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>Ghost of Yotei</h3>
+                    <span class="price">59,99 €</span>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/bf6.png}" alt="Battlefield 6" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/bf6.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>Battlefield 6</h3>
+                    <span class="price">44,99 €</span>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/ARC.jpg}" alt="ARC Raiders" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/ARC.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>ARC Raiders</h3>
+                    <span class="price">29.99 €</span>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/FM26.jpg}" alt="Football Manager 26" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/FM26.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>Football manager 26</h3>
+                    <span class="price">35,99 €</span>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/BO7.jpg}" alt="Call of Duty Black Ops 7" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/BO7.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>Call of Duty Black ops 7</h3>
+                    <span class="price">50,99 €</span>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/FC26.jpg}" alt="FC 26" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/FC26.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="game-info">
+                    <h3>FC 26</h3>
+                    <span class="price">49,99 €</span>
+                </div>
+            </div>
+
         </div>
-
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="videos/gta6-trailer.mp4" type="video/mp4">
-            </video>
-            <span class="span">Battlefield 6</span>
-            <span class="span"></span>
-            <span class="span"></span>
-        </div>
-
-        <div class="">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="videos/gta6-trailer.mp4" type="video/mp4">
-            </video>
-            <span class="span">EA Sports FC 26</span>
-        </div>
-
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Slip Fiction</span>
-        </div>
-
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Clair Obscur : Expedition 33</span>
-        </div>
-
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Monster Hunter Wilds</span>
-        </div>
-
     </div>
+    <br>
+    <br>
 
-
-    <!--Autre footer des avantage du site-->
+    <!-- Footer / avantages du site -->
     <div>
         <footer>
             <ul>
                 <li>
-                    <img th:src="@{img/ultra.jpg}"></img>
+                    <img th:src="@{/img/ultra.jpg}" alt="Ultra rapide" />
                     <h2>Ultra rapide</h2>
-                    <p>Télechargement instantané</p>
+                    <p>Téléchargement instantané</p>
                 </li>
                 <li>
-                    <img th:src="@{img/fiablee.jpg}"></img>
-                    <h2>Fiable et sur </h2>
+                    <img th:src="@{/img/fiablee.jpg}" alt="Fiable et sûr" />
+                    <h2>Fiable et sûr</h2>
                     <p>Plus de 400 jeux</p>
                 </li>
                 <li>
-                    <img th:src="@{img/securite.jpg}"></img>
+                    <img th:src="@{/img/securite.jpg}" alt="Service client" />
                     <h2>Service client</h2>
                     <p>Disponible 24h/24 et 7j/7</p>
                 </li>
             </ul>
         </footer>
     </div>
+    <br>
+    <br>
 
-    <!--Precommander-->
-    <div id ="Précommander">
-        <h1>Précommander >
-            <a href=""></a>
-        </h1>
-        <div class="">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Football manager 26</span>
-        </div>
+    <!-- Précommander -->
+    <div id="precommander">
+        <h1 class="preco-title">Précommander ></h1>
+        <div class="preco-grid">
 
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="videos/gta6-trailer.mp4" type="video/mp4">
-            </video>
-            <span class="span">Call of Duty: Black Ops 7 </span>
-            <span class="span"></span>
-            <span class="span"></span>
-        </div>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/sololeveling.jpg}" alt="Solo Leveling" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/sololeveling.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>Solo Leveling: ARISE OVERDRIVE</h3>
+                    <span class="preco-price">29,99 €</span>
+                </div>
+            </div>
 
-        <div class="">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="videos/gta6-trailer.mp4" type="video/mp4">
-            </video>
-            <span class="span">Resident Evil : Requiem</span>
-        </div>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/resident.jpg}" alt="Resident Evil" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/bf6.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>Resident Evil Requiem Deluxe Edition</h3>
+                    <span class="preco-price">44,99 €</span>
+                </div>
+            </div>
 
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Gta 6 </span>
-        </div>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/destinyrebelle.jpg}" alt="Destiny 2" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/ARC.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>Destiny 2 : Rebelles</h3>
+                    <span class="preco-price">29,99 €</span>
+                </div>
+            </div>
 
-    </div>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/projet.jpg}" alt="Project Motor Racing" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/FM26.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>Project Motor Racing Year 1 Bundle</h3>
+                    <span class="preco-price">53,99 €</span>
+                </div>
+            </div>
 
-    <!--Meilleur vente-->
-    <div id ="Meilleur ventes">
-        <h1>Meilleur ventes >
-            <a href=""></a>
-        </h1>
-        <div class="">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Carte cadeaux PlayStation Store</span>
-        </div>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/nion.jpeg}" alt="Nioh 3" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/BO7.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>Nioh 3</h3>
+                    <span class="preco-price">45,99 €</span>
+                </div>
+            </div>
 
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="" type="video/mp4">
-            </video>
-            <span class="span">Xbox game Ultimate 1 mois (Microsoft Store) </span>
-            <span class="span"></span>
-            <span class="span"></span>
-        </div>
-
-        <div class="">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="" type="video/mp4">
-            </video>
-            <span class="span">Minecraft: Java & Bedrock Edition - PC </span>
-        </div>
-
-        <div class="#">
-            <img src="#" alt="">
-            <video muted loop preload="none">
-                <source src="#" type="video/mp4">
-            </video>
-            <span class="span">Grand Theft Auto V Enhanced - PC  </span>
-        </div>
-
-    </div>
-
-
-    <!--Categories-->
-
-    <div id ="Categories">
-        <h1>Categories >
-            <a href=""></a>
-        </h1>
-        <div class="jeux">
-            <img th:src="@{img/elden.jpg}" alt="Action">
-            <span class="span">Action</span>
-            <a href=""></a>
-
-        </div>
-
-        <div class="">
-            <img th:src="@{img/tombraider.jpg}" alt="Aventure">
-            <span class="span">Aventure</span>
-
-            <a href=""></a>
-
-        </div>
-
-        <div class="">
-            <img th:src="@{img/battlefield2042.jpg}" alt="FPS">
-            <span class="span">FPS</span>
-
-            <a href=""></a>
-
-        </div>
-
-        <div class="">
-            <img th:src="@{img/fantasy-group-adventurers.jpg}" alt="RPG">
-            <span class="span">RPG</span>
-
-            <a href=""></a>
-
-        </div>
-        <div class="">
-            <img th:src="@{img/batman.jpeg}" alt="Jeux solo">
-            <span class="span">Jeux solo</span>
-
-            <a href=""></a>
-
-        </div>
-        <div class="">
-            <img th:src="@{img/dbz.webp}" alt="Anime">
-            <span class="span">Anime</span>
-
-            <a href=""></a>
-
-        </div>
-        <div class="">
-            <img th:src="@{img/hollow.jpg}" alt="Combat">
-            <span class="span">Combat</span>
-
-            <a href=""></a>
-
-        </div>
-
-        <div class="">
-            <img th:src="@{img/strategie.webp}" alt="Stratégie">
-            <span class="span">Stratégie</span>
-
-            <a href=""></a>
+            <div class="preco-card">
+                <div class="preco-media">
+                    <img th:src="@{/img/gta6.jpg}" alt="GTA 6" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/gta6.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preco-info">
+                    <h3>GTA 6</h3>
+                    <span class="preco-price">60,00 €</span>
+                </div>
+            </div>
 
         </div>
     </div>
+    <br>
+    <br>
+
+    <!-- Meilleures ventes -->
+    <div id="meilleuresVentes">
+        <h1 class="mv-title">Meilleures ventes ></h1>
+        <div class="mv-grid">
+
+            <div class="mv-card">
+                <div class="mv-media">
+                    <img th:src="@{/img/ps4.jpg}" alt="PlayStation Store" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/psstore.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <span class="mv-name">Carte cadeaux PlayStation Store</span>
+            </div>
+
+            <div class="mv-card">
+                <div class="mv-media">
+                    <img th:src="@{/img/gamepass.jpg}" alt="Xbox" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/xbox.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <span class="mv-name">Xbox Game Pass Ultimate 1 mois</span>
+            </div>
+
+            <div class="mv-card">
+                <div class="mv-media">
+                    <img th:src="@{/img/minecraft.jpg}" alt="Minecraft" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/minecraft.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <span class="mv-name">Minecraft Java & Bedrock - PC</span>
+            </div>
+
+            <div class="mv-card">
+                <div class="mv-media">
+                    <img th:src="@{/img/gta5.jpg}" alt="GTA V" />
+                    <video muted loop preload="none">
+                        <source th:src="@{/videos/gta5.mp4}" type="video/mp4">
+                    </video>
+                </div>
+                <span class="mv-name">GTA V Enhanced - PC</span>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Catégories -->
+    <div id="categories">
+        <h1 class="cat-title">Catégories ></h1>
+        <div class="cat-grid">
+
+            <div class="cat-card">
+                <img th:src="@{/img/elden.jpg}" alt="Action" />
+                <span>Action</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/tombraider.jpg}" alt="Aventure" />
+                <span>Aventure</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/battlefield2042.jpg}" alt="FPS" />
+                <span>FPS</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/fantasy-group-adventurers.jpg}" alt="RPG" />
+                <span>RPG</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/batman.jpeg}" alt="Jeux solo" />
+                <span>Jeux solo</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/dbz.webp}" alt="Anime" />
+                <span>Anime</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/hollow.jpg}" alt="Combat" />
+                <span>Combat</span>
+            </div>
+
+            <div class="cat-card">
+                <img th:src="@{/img/strategie.webp}" alt="Stratégie" />
+                <span>Stratégie</span>
+            </div>
+
+        </div>
+    </div>
+
 </div>
-
 </html>

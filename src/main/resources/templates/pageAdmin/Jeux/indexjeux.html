@@ -36,11 +36,11 @@
 
                     <!-- Vidéo du jeu -->
                     <td>
-                        <video width="200" height="120" controls th:if="${unJeu.videoGameplay}">
-                            <source th:src="@{/${unJeu.videoGameplay}}" type="video/mp4">
-                            Votre navigateur ne supporte pas la vidéo.
+                        <video controls width="250">
+                            <source th:src="@{Batman.mp3}" type="video/mp3" />
                         </video>
                     </td>
+
 
                     <td>
                         <a th:href="@{'/Jogame/pageadmin/Jeux/' + ${unJeu.id}}" class="btn btn-warning btn-sm me-2">Afficher</a>

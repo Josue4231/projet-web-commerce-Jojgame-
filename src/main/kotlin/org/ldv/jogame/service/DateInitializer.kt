@@ -6,7 +6,6 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 import java.time.LocalDate
-import javax.swing.text.PasswordView
 
 @Component
 class DataInitializer(
@@ -17,7 +16,7 @@ class DataInitializer(
     private val lignePanierDAO: LignePanierDAO,
     private val paiementDAO: PaiementDAO,
     private val panierDAO: PanierDAO,
-    private val roleDAO: RoleDAO,
+
     private val plateformeExterneDAO: PlateformeExterneDAO,
     private val utilisateurDAO: UtilisateurDAO,
     private val passwordEncoder: PasswordEncoder
@@ -34,23 +33,30 @@ class DataInitializer(
         println("Injection des données de test...")
 
         // === UTILISATEURS ===
-        val client1 = Client(
+        val Client = Client(
             id = null,
             nom = "Durand",
             prenom = "Pierre",
-            email = "durand@example.com",
-            motDePasse = "Azerty123"
+            email = "client@client.com",
+            motDePasse = passwordEncoder.encode("client123"),
+
         )
+
 
         val admin = Administrateur(
-            idutilisateur = null,
+            id = null,
             nom = "Admin",
             prenom = "Jean",
-            email = "admin@example.com",
-            motDePasse = "admin"
+            email = "admin@admin.com",
+            motDePasse = passwordEncoder.encode("admin123"),
+
+
+
         )
 
-        utilisateurDAO.saveAll(listOf(client1, admin))
+
+
+        utilisateurDAO.saveAll(listOf(Client, admin))
 
         // === JEUX ===
         val jeu1 = Jeux(
@@ -122,16 +128,8 @@ class DataInitializer(
         avisDAO.save(avis2)
         avisDAO.save(avis3)
 
-        //Role//
-        val roleAdmin = Role(
-            nom = "ADMIN"
-        )
 
-        val roleClient = Role(
-            nom = "CLIENT"
-        )
 
-        roleDAO.saveAll(listOf(roleAdmin, roleClient))
 
 
         // === PANIER ===
@@ -139,7 +137,7 @@ class DataInitializer(
             id = null,
             dateCreation = LocalDate.parse("2025-11-17"),
             total = 0f,
-            client = client1
+            client = Client
         )
 
         panierDAO.save(panier)

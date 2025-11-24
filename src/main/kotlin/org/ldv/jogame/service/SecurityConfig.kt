@@ -22,14 +22,15 @@ class SecurityConfig {
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
-            .csrf { it.disable() } //TODO Retirer cette ligne
+
+            //TODO Retirer cette ligne
             //Restriction des endpoints en fonction du role
             .authorizeHttpRequests {
-                it.requestMatchers("/e-kommerce", "/e-kommerce/register", "/e-kommerce/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                it.requestMatchers("/Jogame", "/Jogame/register", "/Jogame/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
                     // Autoriser l'accès pour les utilisateurs avec le rôle "ADMIN" à /admin/**
-                    .requestMatchers("/e-kommerce/admin/**").hasRole("ADMIN")
+                    .requestMatchers("/Jogame/admin/**").hasRole("ADMIN")
                     // Autoriser l'accès pour les utilisateurs avec le rôle "CLIENT" à /client/**
-                    .requestMatchers("/e-kommerce/client/**").hasRole("CLIENT")
+                    .requestMatchers("/Jogame/client/**").hasRole("CLIENT")
                     // Toutes les autres requêtes doivent être authentifiées
                     .anyRequest().authenticated()
 

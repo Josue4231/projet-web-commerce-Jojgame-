@@ -7,13 +7,13 @@ import jakarta.persistence.*
 @Entity
 @DiscriminatorValue("ADMIN")
 class Administrateur(
-    var idutilisateur: Int? = null,
+    id: Int? = null,
     nom: String,
     prenom: String,
     email: String,
     motDePasse: String,
-    role: String = "administrateur"
-) : Utilisateur(idutilisateur, nom, prenom, email, motDePasse, role) {
+
+) : Utilisateur(id, nom, prenom, email, motDePasse) {
 
     @Transient
     fun ajouterJeu() {
