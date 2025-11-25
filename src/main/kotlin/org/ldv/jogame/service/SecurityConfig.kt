@@ -23,7 +23,7 @@ class SecurityConfig {
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
 
-            //TODO Retirer cette ligne
+           .csrf { it.disable() } //TODO Retirer cette ligne TODO Retirer cette ligne
             //Restriction des endpoints en fonction du role
             .authorizeHttpRequests {
                 it.requestMatchers("/Jogame", "/Jogame/register", "/Jogame/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
@@ -36,12 +36,15 @@ class SecurityConfig {
 
             }
             // Configuration du formulaire de connexion
-            .formLogin { form: FormLoginConfigurer<HttpSecurity?> ->
+            .formLogin { form ->
                 form
-                    .loginPage("/Jogame/login").defaultSuccessUrl("/Jogame/profil").failureUrl("/Jogame/login?error=true")
+                    .loginPage("/Jogame/login")
                     .loginProcessingUrl("/Jogame/login")
+                    .defaultSuccessUrl("/Jogame/profil", true)
+                    .failureUrl("/Jogame/login?error=true")
                     .permitAll()
             }
+
 
             // Configuration du mécanisme de déconnexion
             .logout { logout: LogoutConfigurer<HttpSecurity?> ->

@@ -56,21 +56,11 @@ class MainController (val jeuxDAO: JeuxDAO) {
     }
 
 
-    @GetMapping("/Jogame/api/tendance")
-    @ResponseBody
-    fun getTrendingGames(): List<Map<String, Any?>> {
+    @GetMapping("/Jogame/admin/indexjeux")
+    fun getTrendingGames(model: Model): String {
         val jeux = jeuxDAO.findAll()
-
-        return jeux.map {
-            mapOf(
-                "id" to it.id,
-                "title" to it.titre,
-                "description" to it.description,
-                "videoUrl" to it.videoGameplay,
-                "price" to it.prix,
-                "image" to it.imageJeu
-            )
-        }
+        model.addAttribute("jeux",jeux)
+        return "pageAdmin/Jeux/indexjeux"
     }
     @Controller
     class ProfilController {
@@ -83,11 +73,11 @@ class MainController (val jeuxDAO: JeuxDAO) {
 
             // Redirection si admin
             if ("ROLE_ADMIN" in roles) {
-                return "redirect:/Jogame/admin/dashboard"
+                return "redirect:/Jogame/admin/indexjeux"
             }
 
             // Sinon affichage de la page profil
-            return "pagesClient/profile"
+            return "pageClient/profil"
         }
     }
 

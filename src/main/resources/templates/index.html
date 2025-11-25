@@ -22,16 +22,23 @@
 
             <div class="game-card">
                 <div class="media">
+                    <!-- Image du jeu -->
                     <img th:src="@{/img/Ghostyotei.jpg}" alt="Ghost of Yotei" />
-                    <video muted loop preload="none">
-                        <source th:src="@{/videos/gta6-trailer.mp4}" type="video/mp4">
+
+                    <!-- Vidéo du jeu -->
+                    <video muted loop preload="auto" width="320" height="240" controls>
+                        <source th:src="@{/videos/GhostofYotei.mp4}" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
                     </video>
                 </div>
+
+                <!-- Informations sur le jeu -->
                 <div class="game-info">
                     <h3>Ghost of Yotei</h3>
                     <span class="price">59,99 €</span>
                 </div>
             </div>
+
 
             <div class="game-card">
                 <div class="media">

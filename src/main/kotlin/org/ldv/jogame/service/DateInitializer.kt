@@ -61,10 +61,10 @@ class DataInitializer(
         // === JEUX ===
         val jeu1 = Jeux(
             id = null,
-            titre = "Sekiro",
-            description = "Jeu aventure avec des monstres",
+            titre = "elden ring",
+            description = "Jeux from software",
             prix = 59.99f,
-            categorie = "Aventure",
+            categorie = "Action",
             plateformeCompatible = "PC",
             cleActivation = "ABC123XYZ",
             videoGameplay = "videos/sekiro.mp4",
@@ -79,7 +79,7 @@ class DataInitializer(
             categorie = "Action",
             plateformeCompatible = "PC",
             cleActivation = "DEF456GHI",
-            videoGameplay = "videos/destiny2.mp3",
+            videoGameplay = "videos/destiny2.mp4",
             imageJeu = "images/destiny.jpg"
         )
 
@@ -91,14 +91,26 @@ class DataInitializer(
             categorie = "Action",
             plateformeCompatible = "STEAM",
             cleActivation = "JKL789OPI",
-            videoGameplay = "videos/batman.mp3",
-            imageJeu = "img/batman.jpg"
+            videoGameplay = "videos/batman.mp4",
+            imageJeu = "img/batman.jpeg"
         )
-        val jeux = listOf(jeu1, jeu2, jeu3)
+        val jeu4=Jeux(
+            id=null,
+            titre = "Ghost of Yotei",
+            description = "Jeu samourai",
+            prix = 30.00f,
+            categorie = "Action",
+            plateformeCompatible = "STEAM",
+            cleActivation = "KMNOPDF442",
+            videoGameplay = "videos/ghostofyotei.mp4",
+            imageJeu = "img/Ghostyotei.jpg"
+        )
+        val jeux = listOf(jeu1, jeu2, jeu3, jeu4)
 
         jeuxDAO.save(jeu1)
         jeuxDAO.save(jeu2)
         jeuxDAO.save(jeu3)
+        jeuxDAO.save(jeu4)
 
 
         // === AVIS ===

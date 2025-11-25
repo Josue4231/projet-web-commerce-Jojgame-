@@ -1,16 +1,17 @@
 <div class="col-md-5 text-end">
-    <div th:sec:authorize="isAuthenticated()" class="nav-item">
-        <form action="/e-kommerce/logout" method="post">
+    <div sec:authorize="isAuthenticated()" class="nav-item">
+        <form action="/Jogame/login" method="post">
+<!--            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
             <button class="btn btn-outline-primary me-2">Logout</button>
         </form>
     </div>
 
-    <div th:sec:authorize="isAnonymous()">
+    <div sec:authorize="isAnonymous()">
         <!-- Bouton pour ouvrir le modal de login -->
         <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
             Login
         </button>
-        <button th:sec:authorize="isAnonymous()" type="button" class="btn btn-primary">Inscription</button>
+        <button sec:authorize="isAnonymous()" type="button" class="btn btn-primary">Inscription</button>
     </div>
 </div>
 
@@ -19,7 +20,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Connection</h5>
+                <h5 class="modal-title" id="loginModalLabel">Connexion</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -42,4 +43,164 @@
             </div>
         </div>
     </div>
+<style>
+    /* ----------------------- */
+    /*     STYLE GLOBAL        */
+    /* ----------------------- */
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a12; /* noir bleu foncé */
+        font-family: "Poppins", sans-serif;
+        color: white;
+    }
+
+    /* Conteneur principal stylé */
+    .page-container {
+        max-width: 1400px;
+        margin: 30px auto;
+        padding: 25px;
+        border: 3px solid #0d6efd; /* bleu clair */
+        border-radius: 20px;
+        background: #0e0f17;
+        box-shadow: 0 0 30px rgba(13, 110, 253, 0.2);
+    }
+
+
+
+    /* ----------------------- */
+    /*   ZONE LOGIN HEADER     */
+    /* ----------------------- */
+
+    .col-md-5.text-end {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Boutons */
+    .btn-outline-primary {
+        border: 2px solid #5aa4ff;
+        background: transparent;
+        color: #5aa4ff;
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+        background: #5aa4ff;
+        color: #000;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary {
+        background: #0d6efd;
+        border: none;
+        padding: 8px 17px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+        filter: brightness(1.15);
+        transform: translateY(-2px);
+    }
+
+
+
+    /* ----------------------- */
+    /*         MODAL           */
+    /* ----------------------- */
+
+    .modal-content {
+        background: #11131c;
+        color: white;
+        border-radius: 18px;
+        border: 2px solid #1e2a44; /* bleu marine */
+        box-shadow: 0 0 35px rgba(13, 110, 253, 0.25);
+    }
+
+    /* En-tête modal */
+    .modal-header {
+        background: #0b0d14;
+        border-bottom: 1px solid #1e2a44;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .modal-title {
+        font-size: 22px;
+        color: #d9e6ff;
+    }
+
+    /* Bouton fermer */
+    .btn-close {
+        filter: invert(1);
+        opacity: 0.7;
+    }
+
+    .btn-close:hover {
+        opacity: 1;
+    }
+
+    /* Corps modal */
+    .modal-body {
+        padding: 25px;
+    }
+
+
+
+    /* ----------------------- */
+    /*      FORMULAIRE         */
+    /* ----------------------- */
+
+    .form-label {
+        font-weight: 600;
+        color: #bccdf7;
+    }
+
+    .form-control {
+        background: #0c0e16;
+        border: 1px solid #23304c;
+        padding: 12px;
+        border-radius: 10px;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #5aa4ff;
+        box-shadow: 0 0 10px rgba(90, 164, 255, 0.4);
+        background: #10121c;
+    }
+
+    /* Bouton envoyer */
+    .modal-body .btn-primary {
+        font-size: 17px;
+        padding: 12px;
+        border-radius: 12px;
+        font-weight: 700;
+    }
+
+
+
+    /* ----------------------- */
+    /*   MESSAGE D'ERREUR      */
+    /* ----------------------- */
+
+    .alert-danger {
+        background: #17325d;
+        color: #a8d7ff;
+        border: 1px solid #284b7f;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+</style>
 </div>

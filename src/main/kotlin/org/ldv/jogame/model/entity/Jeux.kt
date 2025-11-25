@@ -32,7 +32,7 @@ class Jeux(
     var videoGameplay: String? = null,
 
     @Column(nullable = true)
-    var imageJeu: String? = null
+    var imageJeu: String
 ) {
 
     @Transient
