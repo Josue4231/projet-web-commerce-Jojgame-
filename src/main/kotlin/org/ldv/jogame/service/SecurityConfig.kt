@@ -23,10 +23,10 @@ class SecurityConfig {
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
 
-           .csrf { it.disable() } //TODO Retirer cette ligne TODO Retirer cette ligne
+          //.csrf { it.disable() } //TODO Retirer cette ligne TODO Retirer cette ligne
             //Restriction des endpoints en fonction du role
             .authorizeHttpRequests {
-                it.requestMatchers("/Jogame", "/Jogame/register", "/Jogame/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                it.requestMatchers("/Jogame", "/Jogame/register", "/Jogame/login", "/css/**", "/js/**", "/img/**", "/favicon.ico","/videos**").permitAll()
                     // Autoriser l'accès pour les utilisateurs avec le rôle "ADMIN" à /admin/**
                     .requestMatchers("/Jogame/admin/**").hasRole("ADMIN")
                     // Autoriser l'accès pour les utilisateurs avec le rôle "CLIENT" à /client/**

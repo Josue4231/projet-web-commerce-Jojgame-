@@ -27,7 +27,7 @@
 
                     <!-- Vidéo du jeu -->
                     <video muted loop preload="auto" width="320" height="240" controls>
-                        <source th:src="@{/home/josue/IdeaProjects/Jogame/src/main/resources/static/videos/GhostofYotei_fixed.mp4}" type="video/mp4">
+                        <source th:src="@{/videos/GhostofYotei_fixed.mp4}" type="video/mp4" />
                         Votre navigateur ne supporte pas la vidéo.
                     </video>
                 </div>
@@ -136,85 +136,85 @@
     <br>
 
     <!-- Précommander -->
-    <div id="precommander">
-        <h1 class="preco-title">Précommander ></h1>
-        <div class="preco-grid">
+    <div id="Précommander">
+        <h1 class="tendance-title">Précommander ></h1>
+        <div class="games-grid">
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/sololeveling.jpg}" alt="Solo Leveling" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/sololeveling.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>Solo Leveling: ARISE OVERDRIVE</h3>
-                    <span class="preco-price">29,99 €</span>
+                    <span class="price">29,99 €</span>
                 </div>
             </div>
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/resident.jpg}" alt="Resident Evil" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/bf6.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>Resident Evil Requiem Deluxe Edition</h3>
-                    <span class="preco-price">44,99 €</span>
+                    <span class="price">44,99 €</span>
                 </div>
             </div>
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/destinyrebelle.jpg}" alt="Destiny 2" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/ARC.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>Destiny 2 : Rebelles</h3>
-                    <span class="preco-price">29,99 €</span>
+                    <span class="price">29,99 €</span>
                 </div>
             </div>
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/projet.jpg}" alt="Project Motor Racing" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/FM26.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>Project Motor Racing Year 1 Bundle</h3>
-                    <span class="preco-price">53,99 €</span>
+                    <span class="price">53,99 €</span>
                 </div>
             </div>
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/nion.jpeg}" alt="Nioh 3" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/BO7.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>Nioh 3</h3>
-                    <span class="preco-price">45,99 €</span>
+                    <span class="price">45,99 €</span>
                 </div>
             </div>
 
-            <div class="preco-card">
-                <div class="preco-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/gta6.jpg}" alt="GTA 6" />
                     <video muted loop preload="none">
                         <source th:src="@{/videos/gta6.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <div class="preco-info">
+                <div class="game-info">
                     <h3>GTA 6</h3>
-                    <span class="preco-price">60,00 €</span>
+                    <span class="price">60,00 €</span>
                 </div>
             </div>
 
@@ -223,60 +223,70 @@
     <br>
     <br>
 
-    <!-- Meilleures ventes -->
-    <div id="meilleuresVentes">
-        <h1 class="mv-title">Meilleures ventes ></h1>
-        <div class="mv-grid">
+    <!--Meilleures ventes-->
+    <div id="Meilleures ventes">
+        <h1 class="tendance-title">Meilleurs ventes ></h1>
+        <div class="games-grid">
 
-            <div class="mv-card">
-                <div class="mv-media">
-                    <img th:src="@{/img/ps4.jpg}" alt="PlayStation Store" />
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/gamepass.jpg}" alt="Game Pass" />
                     <video muted loop preload="none">
-                        <source th:src="@{/videos/psstore.mp4}" type="video/mp4">
+                        <source th:src="@{/videos/}" type="video/mp4">
                     </video>
                 </div>
-                <span class="mv-name">Carte cadeaux PlayStation Store</span>
+                <div class="game-info">
+                    <h3>Game Pass Xbox Ultimate </h3>
+                    <span class="price">10-60 €</span>
+                </div>
             </div>
 
-            <div class="mv-card">
-                <div class="mv-media">
-                    <img th:src="@{/img/gamepass.jpg}" alt="Xbox" />
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/gta5.jpg}" alt="GTA 5" />
                     <video muted loop preload="none">
-                        <source th:src="@{/videos/xbox.mp4}" type="video/mp4">
+                        <source th:src="@{/videos/bf6.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <span class="mv-name">Xbox Game Pass Ultimate 1 mois</span>
+                <div class="game-info">
+                    <h3>GTA V Enhanced</h3>
+                    <span class="price">19,99 €</span>
+                </div>
             </div>
 
-            <div class="mv-card">
-                <div class="mv-media">
+            <div class="game-card">
+                <div class="media">
                     <img th:src="@{/img/minecraft.jpg}" alt="Minecraft" />
                     <video muted loop preload="none">
-                        <source th:src="@{/videos/minecraft.mp4}" type="video/mp4">
+                        <source th:src="@{/videos/ARC.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <span class="mv-name">Minecraft Java & Bedrock - PC</span>
+                <div class="game-info">
+                    <h3>Minecraft</h3>
+                    <span class="price">29,99 €</span>
+                </div>
             </div>
 
-            <div class="mv-card">
-                <div class="mv-media">
-                    <img th:src="@{/img/gta5.jpg}" alt="GTA V" />
+            <div class="game-card">
+                <div class="media">
+                    <img th:src="@{/img/ps4.jpg}" alt="Project Motor Racing" />
                     <video muted loop preload="none">
-                        <source th:src="@{/videos/gta5.mp4}" type="video/mp4">
+                        <source th:src="@{/videos/FM26.mp4}" type="video/mp4">
                     </video>
                 </div>
-                <span class="mv-name">GTA V Enhanced - PC</span>
+                <div class="game-info">
+                    <h3>Carte cadeaux PlayStation Store</h3>
+                    <span class="price">53,99 €</span>
+                </div>
             </div>
-
         </div>
-    </div>
-    <br>
-    <br>
+            <br>
+            <br>
 
     <!-- Catégories -->
     <div id="categories">
-        <h1 class="cat-title">Catégories ></h1>
-        <div class="cat-grid">
+        <h1 class="tendance-title">Catégories > </h1>
+        <div class="games-grid">
 
             <div class="cat-card">
                 <img th:src="@{/img/elden.jpg}" alt="Action" />
@@ -321,5 +331,6 @@
         </div>
     </div>
 
+</div>
 </div>
 </html>

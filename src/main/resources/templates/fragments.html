@@ -79,10 +79,10 @@
                     <a href="#Précommander">Précommander</a>
                 </li>
                 <li>
-                    <a href="#Meilleur ventes">Meilleur ventes</a>
+                    <a href="#Meilleur ventes">Meilleurs ventes</a>
                 </li>
                 <li>
-                    <a href="Support.html">Support 24/7</a>
+                    <a th:href="@{/Jogame/Support}">Support 24/7</a>
                 </li>
 
                 <li>
@@ -94,12 +94,14 @@
                 <li>
                     <a href="Jogame/compte" class="compte">
                     <img th:src="@{img/home.jpg}" alt="Compte">
+                        <a th:href="@{/Jogame/compte}"></a>
                     <span>Compte</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Jogame/inscription" class="inscription">
+                    <a th:href="@{/Jogame/inscription}" class="inscription">
                     <img th:src="@{img/contract_12905263.png}" alt="Inscription">
+
                     <span>Inscription</span>
                     </a>
                 </li>
