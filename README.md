@@ -68,4 +68,4 @@ Le site permet aux utilisateurs de **parcourir des produits, consulter des déta
 
 **Auteur** : Josue Kialengela‑Tazi  
 **GitHub** : https://github.com/Josue4231/projet-web-commerce-Jojgame-  
-🌐 Portfolio : https://ton-portfolio.com
+🌐 Portfolio : https://josue4231.github.io/portfolio-de-Josue/
