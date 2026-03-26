@@ -1,0 +1,46 @@
+<!doctype html>
+
+    <link rel="stylesheet" th:href="@{/css/style3.css}">
+    <main class="py-5">
+        <div class="container">
+            <h1 class="mb-5 text-center">Les Commentaires </h1>
+
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Avis </h1>
+                <a th:href="@{/Jogame/pageAdmin/Avis/createavis}" class="btn btn-success">+ Nouvelle catégorie</a>
+            </div>
+
+
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Note</th>
+                    <th>Commentaire</th>
+                    <th>date Avis</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="avis : ${avis}">
+                    <td th:text="${avis.id}"></td>
+                    <td th:text="${avis.note}"></td>
+                    <td th:text="${avis.commentaire}"></td>
+                    <td th:text="${avis.dateAvis}"></td>
+
+                    <td>
+                        <a th:href="@{'/Jogame/pageadmin/Avis/' +${avis.id}}" class="btn btn-warning btn-sm me-2">Afficher</a>
+                        <a th:href="@{'/Jogame/pageadmin/Avis/editavis/' +${avis.id}}" class="btn btn-warning btn-sm me-2">Modifier</a>
+                        <a th:href="@{'/Jogame/pageadmin/Avis/delete/' + ${avis.id}}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Supprimer cette catégorie ?');">Supprimer</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+
+</html>

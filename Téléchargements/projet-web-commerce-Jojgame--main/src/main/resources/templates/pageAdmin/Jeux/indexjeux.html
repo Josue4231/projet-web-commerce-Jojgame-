@@ -1,0 +1,181 @@
+<!doctype html>
+<html th:replace="base :: html" lang="fr" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="content">
+    <main class="py-5">
+        <div class="container">
+            <h1 class="mb-5 text-center">Administration des categories</h1>
+
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Catégories</h1>
+                <a th:href="@{/Jogame/pageAdmin/Jeux/createjeux}" class="btn btn-success">+ Nouvelle catégorie</a>
+            </div>
+
+
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+            <table class="table table-striped">
+                <thead>
+                <table class="table-jeux">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th>Categories</th>
+                        <th>Clé activation</th>
+                        <th>Video</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="unJeu : ${jeux}" class="jeu-row">
+                        <td th:text="${unJeu.id}"></td>
+                        <td th:text="${unJeu.titre}"></td>
+                        <td th:text="${unJeu.description}"></td>
+                        <td th:text="${unJeu.prix}"></td>
+                        <td th:text="${unJeu.categorie}"></td>
+                        <td th:text="${unJeu.cleActivation}"></td>
+
+                        <td>
+                            <video width="200" controls th:if="${unJeu.videoGameplay}">
+                                <source th:src="@{/${unJeu.videoGameplay}}" type="video/mp4">
+                            </video>
+                        </td>
+
+                        <td>
+                            <img th:if="${unJeu.imageJeu}" th:src="@{/${unJeu.imageJeu}}" width="120" alt="Image du jeu">
+                        </td>
+
+
+                        <td class="actions">
+                            <a th:href="@{'/Jogame/pageadmin/Jeux/' + ${unJeu.id}}" class="btn-action btn-view">Afficher</a>
+                            <a th:href="@{'/Jogame/pageadmin/Jeux/editjeux/' + ${unJeu.id}}" class="btn-action btn-edit">Modifier</a>
+                            <a th:href="@{'/Jogame/pageadmin/Jeux/delete/' + ${unJeu.id}}"
+                               class="btn-action btn-delete"
+                               onclick="return confirm('Supprimer ce jeu ?');">
+                                Supprimer
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </thead>
+            </table>
+        </div>
+    </main>
+</div>
+</html>
+
+<style>
+    /* ----- TABLEAU ADMIN ----- */
+    .table-jeux {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* En-tête */
+    .table-jeux thead th {
+        background: #222;
+        padding: 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #333;
+    }
+
+    /* Lignes */
+    .table-jeux tbody tr {
+        transition: 0.3s;
+    }
+
+    .table-jeux tbody tr:nth-child(even) {
+        background: #141414;
+    }
+
+    .table-jeux tbody tr:hover {
+        background: #292929;
+    }
+
+    /* Cellules */
+    .table-jeux td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #333;
+        vertical-align: middle;
+    }
+
+    /* ----- IMAGES / VIDEOS ----- */
+    .img-jeu {
+        width: 130px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #000;
+        transition: transform 0.2s;
+    }
+
+    .img-jeu:hover {
+        transform: scale(1.05);
+    }
+
+    .video-jeu {
+        width: 200px;
+        border-radius: 8px;
+        outline: none;
+        box-shadow: 0 0 10px #000;
+    }
+
+    /* ----- BOUTONS ----- */
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-action {
+        padding: 7px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+    }
+
+    /* Bouton Afficher */
+    .btn-view {
+        background: #3498db;
+    }
+
+    .btn-view:hover {
+        background: #217dbb;
+    }
+
+    /* Bouton Modifier */
+    .btn-edit {
+        background: #f1c40f;
+        color: #000;
+    }
+
+    .btn-edit:hover {
+        background: #d4a80c;
+    }
+
+    /* Bouton Supprimer */
+    .btn-delete {
+        background: #e74c3c;
+    }
+
+    .btn-delete:hover {
+        background: #c0392b;
+    }
+
+</style>
+
+

@@ -1,0 +1,763 @@
+/* 🎮  STYLE PRINCIPAL JO-GAME  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body.home {
+    position: relative;
+    background: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Filtre noir avec opacité */
+body.home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.2; /* Change l’opacité ici */
+    pointer-events: none; /* Permet de cliquer normalement */
+}
+
+
+/* Filtre noir avec opacité */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("../img/jjh.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/* HEADER  */
+header {
+    background: #0d1b2a;
+    border-bottom: 2px solid #1b263b;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #00b4d8;
+    text-shadow: 0 0 10px #00b4d8;
+}
+
+header img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #00b4d8);
+}
+
+
+/*  MENU  */
+
+
+
+
+/* HERO (image Destiny)  */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("../img/jjh.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Contenu du texte */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: left;
+    padding: 60px;
+}
+
+/*  titre  */
+.hero-content h1 {
+    font-size: 1.5em;
+    color: #00e0ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #00b4d8, 0 0 40px #00b4d8;
+}
+
+/* Texte  */
+.hero-content p {
+    font-size: 1.0em;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #000000;
+}
+
+/* (TENDANCE / PRÉCOMMANDER / VENTES / CATÉGORIES) */
+/* Container principal */
+/* CONTAINER PRINCIPAL TENDANCE - style "cube" */
+/*div[id] {*/
+/*    padding: 80px 40px;*/
+/*    text-align: center;*/
+/*    background: linear-gradient(135deg, #0f1c2d, #1b263b);*/
+/*    min-height: 120vh; !* plus grand pour effet "cube" *!*/
+/*    position: relative;*/
+/*    perspective: 1500px; !* pour effet 3D sur les blocs *!*/
+/*}*/
+
+/*!* Titre de la section *!*/
+/*div[id] h1 {*/
+/*    font-size: 3em; !* plus imposant *!*/
+/*    margin-bottom: 60px;*/
+/*    color: #00b4d8;*/
+/*    border-bottom: 4px solid #00b4d8;*/
+/*    display: inline-block;*/
+/*    padding-bottom: 10px;*/
+/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+/*    letter-spacing: 1.2px;*/
+/*    text-shadow: 0 0 10px #00b4d8;*/
+/*}*/
+
+/*!* Bloc des éléments avec effet cube *!*/
+/*div[id] div  {*/
+/*    display: inline-block;*/
+/*    margin: 25px;*/
+/*    background: #1b263b;*/
+/*    border-radius: 20px;*/
+/*    width: 230px;*/
+/*    height: auto; !* adapter à l'image *!*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*div[id] img {*/
+/*    width: 100%;*/
+/*    height: auto; !* garder les proportions *!*/
+/*    border-radius: 15px;*/
+/*    display: block;*/
+/*}*/
+
+/*!* Hover bloc - effet levitation + rotation légère pour cube *!*/
+/*div[id] div:hover {*/
+/*    transform: translateY(-20px) rotateY(10deg) scale(1.05);*/
+/*    box-shadow: 0 25px 40px rgba(0, 180, 216, 0.6);*/
+/*    background: #162038;*/
+/*}*/
+
+/*!* Images et vidéos *!*/
+/*div[id] video {*/
+/*    width: 100%;*/
+/*    height: 360px;*/
+/*    object-fit: cover;*/
+/*    border-radius: 15px;*/
+/*    transition: transform 0.5s ease, box-shadow 0.5s ease;*/
+/*}*/
+
+/*!* Zoom léger sur hover pour images/vidéos *!*/
+/*div[id] div:hover img,*/
+/*div[id] div:hover video {*/
+/*    box-shadow: 0 15px 25px rgba(0, 180, 216, 0.4);*/
+/*}*/
+
+/*!* Légendes et textes *!*/
+/*div[id] div p {*/
+/*    color: #fff;*/
+/*    font-size: 1em;*/
+/*    margin-top: 12px;*/
+/*    line-height: 1.5;*/
+/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+/*}*/
+
+/* Responsive */
+
+
+
+
+.span {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* LES FOOTER  */
+footer ul {
+    display: flex;
+    justify-content: center;
+    background: #111a25;
+    padding: 40px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+footer ul li {
+    text-align: center;
+    margin: 20px;
+    color: #e0e0e0;
+    max-width: 200px;
+}
+
+footer ul li img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+footer ul li h2 {
+    color: #00b4d8;
+    margin-bottom: 8px;
+}
+
+/*  SITE FOOTER  */
+.site-footer {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    margin: 10px;
+    max-width: 250px;
+    gap: 20px;
+}
+
+.footer-section h3 {
+    color: #00b4d8;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    gap: 20px;
+}
+
+.footer-section nav ul li {
+    margin: 8px 0;
+    display:  inline-block;
+    justify-content: center;
+    align-content:center ;
+    gap: 20px;
+}
+
+.footer-section ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+    gap: 20px;
+
+}
+
+.footer-section ul li a:hover {
+    color: #00b4d8;
+    border-bottom: 1px solid #00b4d8;
+    gap: 20px;
+}
+.footer-links ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.footer-links ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    background-attachment: scroll;
+}
+
+/* Réseaux sociaux */
+.socials li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+/* Langues */
+.footer-lang {
+    margin-top: 20px;
+}
+
+.footer-lang label {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.footer-lang select {
+    background: #1b263b;
+    color: #fff;
+    border: 1px solid #00b4d8;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Bas de page */
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #1b263b;
+    padding-top: 15px;
+    font-size: 0.9em;
+    color: #a9a9a9;
+}
+
+
+
+.span {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+.panier span {
+    color: #00b4d8;
+font-weight: bold;
+}
+.compte span {
+    color: #00b4d8;
+    font-weight: bold;
+}
+/* 🟦 Section Tendance */
+#Tendance {
+    padding: 50px;
+    background: linear-gradient(135deg, #0f1c2d, #1b263b);
+    color: #fff;
+}
+
+.tendance-title {
+    font-weight: bold;
+    border-bottom: 4px solid #00b4d8;
+    color: #00b4d8;
+}
+
+/* 🟦 Grille des jeux */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* 🟦 Carte */
+.game-card {
+    background: #0d1524;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #ffffff20;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+}
+
+/* 🖼️ Image + Vidéo */
+.media {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+
+.media img,
+.media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media img {
+    transition: 0.3s;
+}
+
+.media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s ease;
+    pointer-events: none;
+}
+
+/* Hover effet Instant Gaming */
+.game-card:hover .media img {
+    transform: scale(1.15);
+    opacity: 0;
+}
+
+.game-card:hover .media video {
+    opacity: 1;
+}
+
+/* 🟦 Infos du jeu */
+.game-info {
+    padding: 15px;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 1rem;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #00b4d8;
+}
+
+/* 🟦 SECTION PRÉCOMMANDER */
+#Précommander {
+    padding: 50px;
+    background: linear-gradient(135deg, #1b263b, #0f1c2d);
+    color: #fff;
+}
+
+.preco-title {
+    font-weight: bold;
+    border-bottom: 4px solid #00b4d8;
+    color: #00b4d8;
+}
+
+/* 🟩 Grille */
+.preco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* 🟦 Carte Préco */
+.preco-card {
+    background: #101b2e;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #ffffff20;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.45);
+}
+
+.preco-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* 🖼️ Image + Vidéo */
+.preco-media {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+
+.preco-media img,
+.preco-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preco-media img {
+    transition: 0.3s;
+}
+
+.preco-media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s ease;
+    pointer-events: none;
+}
+
+/* 🔥 Hover effet vidéo */
+.preco-card:hover .preco-media img {
+    transform: scale(1.15);
+    opacity: 0;
+}
+
+.preco-card:hover .preco-media video {
+    opacity: 1;
+}
+
+/* 🟦 Infos du jeu */
+.preco-info {
+    padding: 15px;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.preco-price {
+    font-size: 1rem;
+   background: #00b4d8;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+
+/* 🟦 SECTION MEILLEURES VENTES */
+#MeilleuresVentes {
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #0d1117, #161b22);
+    color: #fff;
+}
+
+.mv-title {
+    font-weight: bold;
+    border-bottom: 4px solid #00b4d8;
+    color: #00b4d8;
+
+}
+
+/* 🔥 Grille */
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* 🔥 Carte */
+.mv-card {
+    background: #0f1724;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ffffff22;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.6);
+    background: #1a2236;
+}
+
+/* 🟦 Image + Vidéo au hover */
+.mv-media {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.mv-media img,
+.mv-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.mv-media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Hover effet */
+.mv-card:hover .mv-media img {
+    opacity: 0;
+    transform: scale(1.15);
+}
+
+.mv-card:hover .mv-media video {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*  Nom du produit */
+.mv-name {
+    display: block;
+    padding: 18px 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mv-card:hover .mv-name {
+    color: #ffd700; /* texte doré au hover */
+    transform: translateY(-3px);
+}
+
+/* Option responsive */
+@media screen and (max-width: 768px) {
+    #MeilleuresVentes {
+        padding: 40px 20px;
+    }
+
+    .mv-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .mv-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .mv-media {
+        height: 140px;
+    }
+
+    .mv-name {
+        font-size: 1rem;
+        padding: 12px 8px;
+    }
+}
+
+.mv
+
+
+/* 🟥 SECTION CATÉGORIES */
+#Categories {
+    padding: 50px;
+    background: linear-gradient(135deg, #1a1f2b, #0b0f18);
+    color: #fff;
+}
+
+.cat-title {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 4px solid #00b4d8;
+    color: #00b4d8;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-top: 0;
+
+}
+
+/* Grille */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* cartes plus larges */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Carte catégorie */
+.cat-card {
+    background: #121826;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ffffff22;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    padding-bottom: 10px;
+}
+
+/* Animation au hover */
+.cat-card:hover {
+    transform: translateY(-10px) scale(1.05); /* monte + agrandissement */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    background: #1b2030; /* légère couleur différente */
+}
+
+/* Image */
+.cat-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Zoom image au hover */
+.cat-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1); /* image un peu plus lumineuse */
+}
+
+/* Texte */
+.cat-card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Changement couleur texte au hover */
+.cat-card:hover span {
+    color: #ffd700; /* texte doré par exemple */
+}
+
+/* Option responsive pour mobile */
+@media screen and (max-width: 600px) {
+    .cat-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .cat-card img {
+        height: 120px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

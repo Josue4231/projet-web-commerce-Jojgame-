@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div th:fragment="footer" class="container">
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>JoGame – La référence pour vos jeux vidéo et cartes cadeaux.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <nav>
+                <ul class="footer-links">
+                    <li>
+                        <a href="index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#">Boutique</a>
+                    </li>
+                    <li>
+                        <a href="#">Promotions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" target="_blank">Contact</a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <ul class="socials">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sélecteur de langue avec drapeaux -->
+        <div class="footer-lang">
+            <label for="lang-select">Langue :</label>
+            <select id="lang-select">
+                <option value="fr" >Français</option>
+                <option value="en" >English</option>
+                <option value="de" >Deutsch</option>
+                <option value="it" >Italiano</option>
+            </select>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 JoGame. Tous droits réservés.</p>
+        </div>
+    </footer>
+</div>
+
+
+
+<div th:fragment="header" class="container">
+    <header class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img th:src="@{img/jojgame.png}" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#Tendance">Tendance</a>
+                </li>
+                <li>
+                    <a href="#Précommander">Précommander</a>
+                </li>
+                <li>
+                    <a href="#Meilleur ventes">Meilleurs ventes</a>
+                </li>
+                <li>
+                    <a th:href="@{/Jogame/Support}">Support 24/7</a>
+                </li>
+
+                <li>
+                    <a href="Jogame/panier" class="panier">
+                    <img th:src="@{img/boutique.jpg}" alt="Panier">
+                    <span>Boutique</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Jogame/compte" class="compte">
+                    <img th:src="@{img/home.jpg}" alt="Compte">
+                        <a th:href="@{/Jogame/compte}"></a>
+                    <span>Compte</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/Jogame/inscription}" class="inscription">
+                    <img th:src="@{img/contract_12905263.png}" alt="Inscription">
+
+                    <span>Inscription</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+</body>
+</html>
+
+

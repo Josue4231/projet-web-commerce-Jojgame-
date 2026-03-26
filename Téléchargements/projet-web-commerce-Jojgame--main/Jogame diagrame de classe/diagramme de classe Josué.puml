@@ -1,0 +1,151 @@
+@startuml
+!theme cerulean
+title 🎮 Diagramme de classes — Projet JoGame
+
+' ===============================
+'        CLASSES PRINCIPALES
+' ===============================
+
+class Utilisateur {
+  +idUtilisateur : int
+  +nom : string
+  +prenom : string
+  +email : string
+  +motDePasse : string
+  +role : string     ' client / administrateur
+  --
+  +creerCompte()
+  +seConnecter()
+  +seDeconnecter()
+  +modifierProfil()
+}
+
+class Client {
+  +ajouterJeuPanier()
+  +passerCommande()
+  +payerCommande()
+  +recevoirCle()
+}
+
+class Acheteur {
+  +activerCle(cle : string, plateforme : string)
+  +telechargerCle()
+}
+
+class Administrateur {
+  +ajouterJeu()
+  +modifierJeu()
+  +supprimerJeu()
+  +gererUtilisateurs()
+  +consulterStatistiques()
+}
+
+class Jeu {
+  +idJeu : int
+  +titre : string
+  +description : string
+  +prix : float
+  +categorie : string
+  +plateformeCompatible : string
+  +cleActivation : string
+  +videoGameplay : string
+  +imageJeu : string
+  --
+  +afficherDetails()
+}
+
+class Panier {
+  +idPanier : int
+  +dateCreation : date
+  +total : float
+  --
+  +ajouterJeu()
+  +supprimerJeu()
+  +viderPanier()
+  +calculerTotal()
+}
+
+class LignePanier {
+  +quantite : int
+  +sousTotal : float
+}
+
+class Commande {
+  +idCommande : int
+  +dateCommande : date
+  +montantTotal : float
+  +statut : string
+  --
+  +validerCommande()
+}
+
+class Paiement {
+  +idPaiement : int
+  +methode : string
+  +montant : float
+  +datePaiement : date
+  +statut : string
+  --
+  +effectuerPaiement()
+  +verifierPaiement()
+}
+
+class PlateformeExterne {
+  +idPlateforme : int
+  +nom : string
+  +urlActivation : string
+  --
+  +activerCle(cle : string)
+}
+
+class Avis {
+  +idAvis : int
+  +note : int
+  +commentaire : string
+  +dateAvis : date
+  --
+  +ajouterAvis()
+  +supprimerAvis()
+}
+
+' ===============================
+'            RELATIONS
+' ===============================
+
+Utilisateur <|-- Client
+Client <|-- Acheteur
+Utilisateur <|-- Administrateur
+
+Client "1" --> "1" Panier : possède >
+Panier "1" --> "0..*" LignePanier : contient >
+LignePanier "1" --> "1" Jeu : correspond à >
+Client "1" --> "0..*" Commande : passe >
+Commande "1" --> "1..*" Jeu : contient >
+Commande "1" --> "1" Paiement : associé à >
+Acheteur "1" --> "0..*" PlateformeExterne : accède à >
+Jeu "1" --> "1" PlateformeExterne : compatible avec >
+Client "1" --> "0..*" Avis : rédige >
+Jeu "1" --> "0..*" Avis : reçoit >
+
+@enduml
+
+"""
+🧠 Explication du diagramme
+Classe	Rôle principal
+Utilisateur	Classe de base (héritée par Client, Acheteur, Admin).
+
+Client	Peut acheter, payer et recevoir une clé numérique.
+
+Acheteur	Client connecté qui active sa clé sur une plateforme externe (Steam, Xbox, etc.).
+
+Administrateur	Gère le site, les jeux, les utilisateurs et les ventes.
+
+Jeu	Contient toutes les informations sur un jeu.
+
+Panier / LignePanier	Gère les articles avant achat.
+
+Commande / Paiement	Gère les transactions et leur validation.
+
+PlateformeExterne	Représente les plateformes où activer les clés.
+
+Avis	Permet aux utilisateurs de laisser des notes et commentaires.
