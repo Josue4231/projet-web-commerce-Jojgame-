@@ -1,0 +1,88 @@
+@startuml
+!theme plain
+left to right direction
+title Diagramme de cas d'utilisation — Projet JoGame
+
+' === Acteurs ===
+actor "Visiteur" as Visiteur
+actor "Client" as Client
+actor "Acheteur (Utilisateur connecté)" as Acheteur
+actor "Système de paiement\n(PayPal / CB)" as Paiement
+actor "Plateforme externe\n(Steam / Xbox / PlayStation)" as Plateforme
+actor "Administrateur" as Admin 
+
+' === Système principal ===
+rectangle "Projet JoGame" {
+
+  ' --- Fonctions visiteurs ---
+  (Consulter le catalogue de jeux) as UC1
+  (Rechercher un jeu) as UC2
+  (Voir les détails d’un jeu) as UC3
+  (Créer un compte) as UC4
+  (Se connecter) as UC5
+
+  ' --- Fonctions clients ---
+  (Information du jeu — exemple : vidéo du gameplay) as UC6
+  (Ajouter un jeu au panier) as UC7
+  (Modifier le panier) as UC8
+  (Passer une commande) as UC9
+  (Payer la commande) as UC10
+  (Recevoir la clé numérique) as UC11
+  (Consulter l’historique d’achats) as UC12
+  (Télécharger la clé achetée) as UC13
+  (Mettre un avis) as UC14
+  (Modifier son profil) as UC15
+  (Se déconnecter de son profil) as UC16
+
+  ' --- Fonctions administrateur ---
+  (Gérer le catalogue de jeux) as UC17
+  (Gérer les utilisateurs) as UC18
+  (Gérer les commandes) as UC19
+  (Consulter les statistiques de vente) as UC20
+
+  ' --- Fonctions acheteur ---
+  (Réception de la clé numérique) as UC21
+  (Activation sur une plateforme externe) as UC22
+  (Jeu activé) as UC23
+}
+
+' === Liens Visiteur ===
+Visiteur --> UC1
+Visiteur --> UC2
+Visiteur --> UC3
+Visiteur --> UC4
+Visiteur --> UC5
+
+' === Liens Client ===
+Client --> UC6
+Client --> UC7
+Client --> UC8
+Client --> UC9
+Client --> UC10
+Client --> UC11
+Client --> UC12
+Client --> UC13
+Client --> UC14
+Client --> UC15
+Client --> UC16
+
+' === Liens Paiement ===
+UC10 --> Paiement : effectue le paiement
+
+' === Liens Administrateur (à droite) ===
+UC17 <-- Admin
+UC18 <-- Admin
+UC19 <-- Admin
+UC20 <-- Admin
+
+' === Liens Acheteur (Utilisateur connecté) ===
+UC11 --> Acheteur
+Acheteur --> UC21
+Acheteur --> UC22
+Acheteur --> UC23
+
+' === Liens Plateforme externe ===
+UC22 --> Plateforme : activation de la clé
+UC23 --> Plateforme : jeu disponible
+
+@enduml

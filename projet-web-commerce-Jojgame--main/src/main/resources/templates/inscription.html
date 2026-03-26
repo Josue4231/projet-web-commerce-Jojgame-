@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogame</title>
+    <link rel="stylesheet" th:href="@{/css/style2.css}">
+</head>
+<body>
+<div class="inscription">
+    <h1>Inscription</h1>
+
+    <form action="Jogame/compte" method="GET">
+
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrer votre nom" required>
+
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Entrer votre prénom" required>
+
+        <label for="date">Date de naissance</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Entrer votre mail" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" placeholder="Entrer votre mot de passe" required>
+
+        <button type="submit">Valider</button>
+
+    </form>
+
+    <p>
+        <a href="Jogame">Déjà un compte ? Connectez-vous ici</a>
+    </p>
+</div>
+</body>
+</html>
