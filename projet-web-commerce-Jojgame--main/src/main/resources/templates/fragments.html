@@ -66,43 +66,40 @@
 <div th:fragment="header" class="container">
     <header class="header">
         <nav>
-            <ul>
+            <!-- Logo à gauche -->
+            <ul class="left-menu">
                 <li>
                     <a href="index.html">
-                        <img th:src="@{img/jojgame.png}" />
+                        <img th:src="@{img/jojgame.png}" alt="Logo">
                     </a>
                 </li>
-                <li>
-                    <a href="#Tendance">Tendance</a>
-                </li>
-                <li>
-                    <a href="#Précommander">Précommander</a>
-                </li>
-                <li>
-                    <a href="#Meilleur ventes">Meilleurs ventes</a>
-                </li>
-                <li>
-                    <a th:href="@{/Jogame/Support}">Support 24/7</a>
-                </li>
+            </ul>
 
+            <!-- Menu principal centré -->
+            <ul class="center-menu">
+                <li><a href="#Tendance">Tendance</a></li>
+                <li><a href="#Précommander">Précommander</a></li>
+                <li><a th:href="@{/Jogame/Support}">Support 24/7</a></li>
+            </ul>
+
+            <!-- Compte, Inscription et Panier à droite -->
+            <ul class="right-menu">
                 <li>
-                    <a href="Jogame/panier" class="panier">
-                    <img th:src="@{img/boutique.jpg}" alt="Panier">
-                    <span>Boutique</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="Jogame/compte" class="compte">
-                    <img th:src="@{img/home.jpg}" alt="Compte">
-                        <a th:href="@{/Jogame/compte}"></a>
-                    <span>Compte</span>
+                    <a th:href="@{/Jogame/compte}" class="compte">
+                        <img th:src="@{img/home.jpg}" alt="Compte">
+                        <span>Compte</span>
                     </a>
                 </li>
                 <li>
                     <a th:href="@{/Jogame/inscription}" class="inscription">
-                    <img th:src="@{img/contract_12905263.png}" alt="Inscription">
-
-                    <span>Inscription</span>
+                        <img th:src="@{img/contract_12905263.png}" alt="Inscription">
+                        <span>Inscription</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Jogame/panier" class="panier">
+                        <img th:src="@{img/boutique1.jpg}" alt="Panier">
+                        <span>Boutique</span>
                     </a>
                 </li>
             </ul>

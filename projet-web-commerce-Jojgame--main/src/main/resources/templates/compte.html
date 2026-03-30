@@ -12,7 +12,7 @@
 <div class="Connection">
     <h1>Connexion</h1>
 
-    <form action="Jogame" method="post">
+    <form th:action="@{index.html}" method="post">
 
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 
@@ -29,7 +29,7 @@
     </form>
 
     <p>
-        <a href="Jogame/inscription">Pas encore de compte ? Inscrivez-vous ici</a>
+        <a th:href="@{inscription.html}">Pas encore de compte ? Inscrivez-vous ici</a>
     </p>
 </div>
 
